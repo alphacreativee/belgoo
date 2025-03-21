@@ -8,7 +8,7 @@ const plumber = require("gulp-plumber"); // Nhập plugin xử lý lỗi (không
 
 // Task xử lý JavaScript
 function js() {
-  return src("assets/js/*.js", { allowEmpty: true }) // Lấy tất cả file .js trong assets/js
+  return src("assets/js/group/*.js", { allowEmpty: true }) // Lấy tất cả file .js trong assets/js
     .pipe(plumber()) // Ngăn task dừng khi có lỗi
     .pipe(uglify()) // Nén file JS
     .pipe(rename({ suffix: ".min" })) // Thêm hậu tố .min
@@ -36,7 +36,7 @@ function taskWatch() {
     injectChanges: true, // Chèn thay đổi mà không reload toàn trang
     notify: false, // Tắt thông báo BrowserSync trên trình duyệt
   });
-  watch("assets/js/*.js", js); // Theo dõi file JS
+  watch("assets/js/group/*.js", js); // Theo dõi file JS
   watch("assets/scss/*.scss", scss); // Theo dõi file SCSS
   watch("*.html").on("change", browserSync.reload); // Reload khi file HTML thay đổi
 }

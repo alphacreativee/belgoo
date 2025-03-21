@@ -1,3 +1,4 @@
+import { preloadImages } from "../../libs/utils.js";
 let lenis;
 Splitting();
 function ourProduct() {
@@ -86,7 +87,6 @@ function footer() {
         start: "top top",
         end: () => `+=${footerTopHeight * 2}`,
         scrub: 1,
-        // markers: { startColor: "green", endColor: "red" }
       },
       ease: "none",
     }
@@ -100,10 +100,14 @@ function footer() {
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   footer();
-  textAnimation();
+  console.log("aaaa");
 };
-init();
-
+preloadImages("img").then(() => {
+  // Once images are preloaded, remove the 'loading' indicator/class from the body
+  ourProduct();
+  init();
+});
 $(window).on("beforeunload", function () {
   $(window).scrollTop(0);
 });
+textAnimation();
