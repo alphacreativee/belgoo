@@ -1,0 +1,140 @@
+.process {
+  width: 100%;
+  height: 100vh;
+
+  &__wrapper {
+    width: 365px;
+    height: 365px;
+    border-radius: 50%;
+    // border: 1px solid #fff;
+    position: relative;
+
+    .circle-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      .progress-circle {
+        transform-origin: center;
+        transform: rotate(90deg);
+      }
+      .progress-path {
+        opacity: 0;
+      }
+    }
+  }
+  &__back {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    .shadow-both {
+      position: absolute;
+      bottom: -14px;
+      transform: translateX(-65px);
+      left: 50%;
+      z-index: 2;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background-color: #b96a0766;
+      filter: blur(500px);
+    }
+  }
+  &__front {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -313px);
+    width: 594px;
+    aspect-ratio: 1;
+    z-index: 2;
+    .both {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .button-discover {
+        position: absolute;
+        left: var(--circle-x, 0);
+        top: var(--circle-y, 0);
+        transform: scale(0);
+        transform-origin: center;
+        transition: transform 0.5s ease;
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-text);
+        border-radius: 50%;
+        pointer-events: none;
+        font-weight: 400;
+        z-index: 3;
+        &.zoom {
+          animation: zoomEffect 0.4s ease;
+        }
+      }
+      &:hover {
+        .button-discover {
+          transform: scale(1);
+        }
+      }
+    }
+    img {
+      &:hover {
+        cursor: none;
+      }
+    }
+    &--content {
+      position: absolute;
+      max-width: 325px;
+      width: 100%;
+      left: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.5s ease;
+      &.none-content {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+      }
+      h4 {
+        margin-bottom: 40px;
+        font-weight: 400;
+      }
+      h3 {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__item {
+    position: absolute;
+    &.step-none {
+      display: none;
+    }
+    img {
+      object-position: right;
+    }
+  }
+}
+@keyframes zoomEffect {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

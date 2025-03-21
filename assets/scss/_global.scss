@@ -1,0 +1,23 @@
+body {
+  font-family: var(--font-primary);
+}
+
+.button {
+  &-primary {
+    display: inline-block;
+    padding: 11px 24px;
+    background-color: var(--color-secondary);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 0px var(--color-secondary);
+    &:hover {
+      border: 1px solid rgba(30, 30, 30, 0.4);
+      box-shadow: 0 0 0 4px var(--color-secondary);
+      color: var(--color-primary);
+    }
+    &.w-full {
+      width: calc(100% - 8px);
+      text-align: center;
+    }
+  }
+}

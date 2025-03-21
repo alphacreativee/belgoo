@@ -1,0 +1,50 @@
+:root {
+  // font
+  --font-primary: "Helvetica Neue", sans-serif;
+  // color
+  --color-primary: #1e1e1e;
+  --color-black: #000000;
+  --color-secondary: #e4ddce;
+  --color-third: #e3dccd;
+  --color-text: #e5dccb;
+
+  // other
+}
+// set class name
+.h2-font {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+}
+.h3-font {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+}
+.b1-font {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.b2-font {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.tag-font {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+.color-white {
+  color: #ffffff;
+}
+.color-black {
+  color: var(--color-black);
+}
+.color-primary {
+  color: var(--color-primary);
+}
+.color-text {
+  color: var(--color-text);
+}
